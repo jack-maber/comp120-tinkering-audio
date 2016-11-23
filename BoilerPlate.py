@@ -1,7 +1,7 @@
 import wave
 import struct
 
-clip = wave.open('noise2.wav')
+clip = wave.open('noise2.wav','r')
 frames = clip.getnframes()
 
 for i in range(0, frames):
