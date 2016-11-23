@@ -24,6 +24,14 @@ for i in range(0, Soundtuple[3]):
         values.append(packaged_value)
 
 value_str = ''.join(values)
+def getSampleValueAt()
+
+def echo(sndFile, delay):
+    s1 = sndFile
+    s2 = sndFile
+for index in range(delay, len(s1)):
+    echo = 0.6*
+
 noise_out.writeframes(value_str)
 
 noise_out.close()
