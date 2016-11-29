@@ -41,9 +41,10 @@ def echo(sndFile, delay):
     noise_out.close()
     return values
 
-
-
 noise_out.writeframes(value_str)
 
 noise_out.close()
 
+def increase_volume(frames, length):
+    for i in xrange(length):
+        frames[i] *= 2
