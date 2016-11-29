@@ -9,12 +9,13 @@ amplitude = 1
 samples = frequency*samplerate
 BitDepth = 32767
 
+#Tuple of attributes of the wav file
 Soundtuple = (1, 2, samplerate, SampleLength, 'NONE', 'Not compressed')
 noise_out = wave.open('noise2.wav','w')
 noise_out.setparams(Soundtuple)
 
 values = []
-
+#unpackaging the wav file so we get understandable values
 for i in range(0, Soundtuple[3]):
     value = math.sin(2.0 * math.pi * frequency * (i/Soundtuple[2])) * (amplitude * BitDepth)
     #print value
@@ -24,7 +25,7 @@ for i in range(0, Soundtuple[3]):
         values.append(packaged_value)
 
 
-
+#adds an echo to the wav file through a delay and lowering of volume
 def echo(sndFile, delay):
     values = []
     Channels = 1
@@ -45,6 +46,7 @@ noise_out.writeframes(value_str)
 
 noise_out.close()
 
+#increases volume by making the amplitude of the waves bigger 
 def increase_volume(frames, length):
     for i in xrange(length):
         frames[i] *= 2
