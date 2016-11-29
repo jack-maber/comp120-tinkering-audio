@@ -11,7 +11,7 @@ BitDepth = 32767
 
 #Tuple of attributes of the wav file
 Soundtuple = (1, 2, samplerate, SampleLength, 'NONE', 'Not compressed')
-noise_out = wave.open('noise2.wav','w')
+noise_out = wave.open('Alesis-Fusion-Acoustic-Bass-C2.wav','w')
 noise_out.setparams(Soundtuple)
 
 values = []
@@ -38,15 +38,14 @@ def echo(sndFile, delay):
         packaged_value = struct.pack("<h", s1[index])
         for j in xrange(Channels):
             values.append(packaged_value)
+    value_str = ''.join(values)
     noise_out.writeframes(value_str)
     noise_out.close()
+    noise_out.writeframes(value_str)
     return values
-
-noise_out.writeframes(value_str)
-
 noise_out.close()
 
-#increases volume by making the amplitude of the waves bigger 
+#increases volume by making the amplitude of the waves bigger
 def increase_volume(frames, length):
     for i in xrange(length):
         frames[i] *= 2
