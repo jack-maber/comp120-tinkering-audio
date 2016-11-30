@@ -26,6 +26,7 @@ for i in range(0, Soundtuple[3]):
 
 
 #adds an echo to the wav file through a delay and lowering of volume
+#Update, corrupts file and dont know why 0-0
 def echo(sndFile, delay):
     values = []
     Channels = 1
