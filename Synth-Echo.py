@@ -19,7 +19,7 @@ values = []
 for i in range(0, Soundtuple[3]):
     value = math.sin(2.0 * math.pi * frequency * (i/Soundtuple[2])) * (amplitude * BitDepth)
     #print value
-    packaged_value = struct.pack('h', value)
+    packaged_value = struct.pack('<h', value)
 
     for j in xrange(0,Soundtuple[0]):
         values.append(packaged_value)
