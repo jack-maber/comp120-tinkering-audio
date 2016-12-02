@@ -74,7 +74,7 @@ def synth():
 
 #adds an echo to the wav file through a delay and lowering of volume
 def echo(sndFile, delay):
-    noise_out = wave.open('noise2.wav', 'w')
+    noise_out = wave.open('shutup.wav', 'w')
     values = []
     Channels = 1
     s1 = sndFile
@@ -101,7 +101,6 @@ def whitenoise():
     length = 44100 * 0.5 #seconds
     amplitude = 32767
 
-
     #creates blank noise
     noise = wave.open('whitenoise.wav', 'w')
     noise.setparams((1, 2, 44100, length, 'NONE', 'Not compressed'))
@@ -115,4 +114,4 @@ def whitenoise():
         print '' + str(pos) + ' of ' + str(length) + ': ' + packedvalue
     return noise
 
-whitenoise()
+echo(sndFile, delay)
