@@ -3,6 +3,7 @@ import struct
 import math
 import random
 
+framevalues = []
 
 def decoder():
     import wave
@@ -14,7 +15,8 @@ def decoder():
     for i in range(0, frames):
         soundinfo = clip.readframes(1)
         clipstruct = struct.unpack("<h", soundinfo)
-        print(int(clipstruct[0]))
+        framevalues.append(int(clipstruct[0]))
+        #print(int(clipstruct[0]))
 
 
 def tonegen():
@@ -114,4 +116,4 @@ def whitenoise():
         print '' + str(pos) + ' of ' + str(length) + ': ' + packedvalue
     return noise
 
-echo(sndFile, delay)
+echo(framevalues, delay)
