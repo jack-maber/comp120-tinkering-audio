@@ -98,6 +98,11 @@ def increase_volume(frames, length):
     for i in xrange(length):
         frames[i] *= 2
 
+#halfs volume by halfing the amplitude of the wave
+def half_volume(frames, length):
+        for i in xrange(length):
+            frames[i] *= 0.5
+
 #Creates blank file and adds whitenoise
 def whitenoise():
     length = 44100 * 0.5 #seconds
@@ -116,4 +121,4 @@ def whitenoise():
         print '' + str(pos) + ' of ' + str(length) + ': ' + packedvalue
     return noise
 
-echo(framevalues, delay)
+
