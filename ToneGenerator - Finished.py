@@ -125,6 +125,6 @@ def whitenoise():
 def soundappend(noise1,noise2):
     appendedtune = noise1
     for i in xrange(0,noise2.__len__()):
-        part1.append(noise2[i])
+        appendedtune.append(noise2[i])
         return appendedtune
         
